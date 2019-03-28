@@ -61,11 +61,15 @@ struct Message whois_msgtab = {
 int doing_whois_hook;
 int doing_whois_global_hook;
 int doing_whois_channel_visibility_hook;
+int doing_whois_global_hook;
+int doing_whois_global_top_hook;
 
 mapi_clist_av1 whois_clist[] = { &whois_msgtab, NULL };
 mapi_hlist_av1 whois_hlist[] = {
 	{ "doing_whois",			&doing_whois_hook },
 	{ "doing_whois_global",			&doing_whois_global_hook },
+        { "doing_whois_top",	&doing_whois_top_hook },
+	{ "doing_whois_top_global",	&doing_whois_global_top_hook },
 	{ "doing_whois_channel_visibility",	&doing_whois_channel_visibility_hook },
 	{ NULL, NULL }
 };
