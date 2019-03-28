@@ -335,6 +335,13 @@ single_whois(struct Client *source_p, struct Client *target_p, int operspy)
 				   target_p->name, obuf);
 	}
 
+   // Unreal +h umode compatibility 
+
+        if(MyClient(source_p))
+		call_hook(doing_whois_top_hook, &hdata);
+	else
+		call_hook(doing_whois_global_top_hook, &hdata);
+
 	if(IsSSLClient(target_p))
 	{
 		char cbuf[256] = "is using a secure connection";

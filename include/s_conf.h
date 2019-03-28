@@ -142,6 +142,7 @@ struct config_file_entry
 	const char *configfile;
 
 	char *default_operstring;
+        char *default_helpopstring;
 	char *default_adminstring;
 	char *servicestring;
 	char *kline_reason;
